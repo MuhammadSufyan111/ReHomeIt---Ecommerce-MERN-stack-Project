@@ -7,7 +7,7 @@ const RecommendedProducts = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  const API_URL = "http://localhost:5000/api/products"; 
+  const API_URL = "https://rehomeit-ecommerce-website.onrender.com/api/products"; 
 
   const fetchProducts = async () => {
     setLoading(true);
@@ -51,7 +51,7 @@ const RecommendedProducts = () => {
           >
             {product.image && (
               <img
-                src={`http://localhost:5000/${product.image.replace(/\\/g, "/")}`}
+                src={`https://rehomeit-ecommerce-website.onrender.com/${product.image.replace(/\\/g, "/")}`}
                 alt={product.name}
                 className="w-full h-50 object-contain rounded-lg mb-3"
               />

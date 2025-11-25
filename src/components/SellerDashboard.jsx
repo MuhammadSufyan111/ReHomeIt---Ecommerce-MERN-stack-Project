@@ -7,7 +7,7 @@ const SellerDashboard = () => {
   const [editingId, setEditingId] = useState(null);
   const token = localStorage.getItem("token");
 
-  const API_URL = "http://localhost:5000/api/seller";
+  const API_URL = "https://rehomeit-ecommerce-website.onrender.com/api/seller";
 
   const fetchProducts = async () => {
     setLoading(true);
@@ -93,7 +93,6 @@ const SellerDashboard = () => {
     <div className="min-h-screen p-4 bg-gray-100">
       <h1 className="text-3xl font-bold mb-4">Seller Dashboard</h1>
 
-      {/* Add/Edit Product Form */}
       <form className="bg-white p-4 rounded mb-6 shadow-md max-w-md" onSubmit={handleSubmit}>
         <h2 className="text-xl font-semibold mb-2">{editingId ? "Edit Product" : "Add Product"}</h2>
         <input
@@ -152,7 +151,7 @@ const SellerDashboard = () => {
             <div key={p._id} className="bg-white p-4 rounded shadow-md">
               {p.image && (
                 <img
-                  src={`http://localhost:5000/${p.image.replaceAll("\\", "/")}`}
+                  src={`https://rehomeit-ecommerce-website.onrender.com/${p.image.replaceAll("\\", "/")}`}
                   alt={p.name}
                   className="h-40 w-full object-cover mb-2"
                 />

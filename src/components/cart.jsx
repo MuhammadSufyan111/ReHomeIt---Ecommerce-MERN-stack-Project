@@ -21,7 +21,7 @@ const Cart = () => {
     if (!token) return;
     setLoading(true);
     try {
-      const res = await fetch("http://localhost:5000/api/cart", {
+      const res = await fetch("https://rehomeit-ecommerce-website.onrender.com/api/cart", {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();
@@ -46,7 +46,7 @@ const Cart = () => {
   const handleQuantityChange = async (productId, newQuantity) => {
     if (newQuantity < 1) return;
     try {
-      const res = await fetch("http://localhost:5000/api/cart/update", {
+      const res = await fetch("https://rehomeit-ecommerce-website.onrender.com/api/cart/update", {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -65,7 +65,7 @@ const Cart = () => {
 
   const handleRemove = async (productId) => {
     try {
-      const res = await fetch("http://localhost:5000/api/cart/remove", {
+      const res = await fetch("https://rehomeit-ecommerce-website.onrender.com/api/cart/remove", {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
@@ -87,7 +87,7 @@ const Cart = () => {
 
   const handleOrder = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/orders/place", {
+      const res = await fetch("https://rehomeit-ecommerce-website.onrender.com/api/orders/place", {
         method: "POST",
         headers: { Authorization: `Bearer ${token}` },
       });
@@ -129,7 +129,7 @@ const Cart = () => {
               >
                 <div className="flex items-center gap-4">
                   <img
-                    src={`http://localhost:5000/${item.product.image}`}
+                    src={`https://rehomeit-ecommerce-website.onrender.com/${item.product.image}`}
                     alt={item.product.name}
                     className="w-20 h-20 object-cover rounded"
                   />

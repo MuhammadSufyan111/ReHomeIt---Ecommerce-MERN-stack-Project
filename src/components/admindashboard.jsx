@@ -23,13 +23,13 @@ const AdminDashboard = () => {
       setLoading(true);
       try {
         const [usersRes, productsRes, ordersRes] = await Promise.all([
-          fetch("http://localhost:5000/api/admin/users", {
+          fetch("https://rehomeit-ecommerce-website.onrender.com/api/admin/users", {
             headers: { Authorization: `Bearer ${token}` },
           }),
-          fetch("http://localhost:5000/api/admin/products", {
+          fetch("https://rehomeit-ecommerce-website.onrender.com/api/admin/products", {
             headers: { Authorization: `Bearer ${token}` },
           }),
-          fetch("http://localhost:5000/api/orders/all", {
+          fetch("https://rehomeit-ecommerce-website.onrender.com/api/orders/all", {
             headers: { Authorization: `Bearer ${token}` },
           }),
         ]);
@@ -54,7 +54,7 @@ const AdminDashboard = () => {
   const handleDeleteUser = async (id) => {
     if (!window.confirm("Are you sure you want to delete this user?")) return;
     try {
-      const res = await fetch(`http://localhost:5000/api/admin/user/${id}`, {
+      const res = await fetch(`https://rehomeit-ecommerce-website.onrender.com/api/admin/user/${id}`, {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}` },
       });
@@ -66,7 +66,7 @@ const AdminDashboard = () => {
 
   const handleToggleUser = async (id) => {
     try {
-      const res = await fetch(`http://localhost:5000/api/admin/user/toggle/${id}`, {
+      const res = await fetch(`https://rehomeit-ecommerce-website.onrender.com/api/admin/user/toggle/${id}`, {
         method: "PUT",
         headers: { Authorization: `Bearer ${token}` },
       });
@@ -84,7 +84,7 @@ const AdminDashboard = () => {
   const handleDeleteProduct = async (id) => {
     if (!window.confirm("Delete this product?")) return;
     try {
-      const res = await fetch(`http://localhost:5000/api/admin/product/${id}`, {
+      const res = await fetch(`https://rehomeit-ecommerce-website.onrender.com/api/admin/product/${id}`, {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}` },
       });

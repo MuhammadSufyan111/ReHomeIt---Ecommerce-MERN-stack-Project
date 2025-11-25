@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { refreshCartCount } from "./header";
 
-const API_URL = "http://localhost:5000/api/products";
+const API_URL = "https://rehomeit-ecommerce-website.onrender.com/api/products";
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -32,7 +32,7 @@ const ProductDetails = () => {
   const handleAddToCart = async () => {
     if (!token) return alert("Please log in first!");
     if (quantity < 1 || quantity > product.stock) return alert("Invalid quantity");
-    const res = await fetch("http://localhost:5000/api/cart/add", {
+    const res = await fetch("https://rehomeit-ecommerce-website.onrender.com/api/cart/add", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -56,7 +56,7 @@ const ProductDetails = () => {
     <div className="max-w-4xl mx-auto mt-10 bg-white p-6 rounded shadow-md">
       <div className="flex flex-col md:flex-row gap-6">
         <img
-          src={`http://localhost:5000/${product.image}`}
+          src={`https://rehomeit-ecommerce-website.onrender.com/${product.image}`}
           alt={product.name}
           className="w-full md:w-1/2 h-80 object-cover rounded"
         />

@@ -25,7 +25,7 @@ const BecomeSeller = () => {
     }
 
     try {
-      const res = await fetch(`http://localhost:5000/api/seller/become`, {
+      const res = await fetch(`https://rehomeit-ecommerce-website.onrender.com/api/seller/become`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

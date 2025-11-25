@@ -20,7 +20,7 @@ const AddProduct = ({ onClose, onProductAdded }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/api/seller/products", form, {
+      await axios.post("https://rehomeit-ecommerce-website.onrender.com/api/seller/products", form, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

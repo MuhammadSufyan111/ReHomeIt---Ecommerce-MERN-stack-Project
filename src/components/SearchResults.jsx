@@ -11,7 +11,7 @@ const SearchResults = () => {
     const fetchProducts = async () => {
       if (!query) return;
       try {
-        const res = await fetch(`http://localhost:5000/api/products/search?q=${query}`);
+        const res = await fetch(`https://rehomeit-ecommerce-website.onrender.com/api/products/search?q=${query}`);
         const data = await res.json();
         setProducts(data);
       } catch (err) {

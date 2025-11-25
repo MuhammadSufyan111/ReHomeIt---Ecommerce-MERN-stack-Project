@@ -23,7 +23,7 @@ const Header = () => {
   const fetchCartCount = async () => {
     if (!token) return;
     try {
-      const res = await fetch("http://localhost:5000/api/cart", {
+      const res = await fetch("https://rehomeit-ecommerce-website.onrender.com/api/cart", {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();

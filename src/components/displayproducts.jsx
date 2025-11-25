@@ -20,7 +20,7 @@ const DisplayProducts = ({ products: propsProducts }) => {
   const fetchCategoryProducts = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:5000/api/products/category/${categoryName}`
+        `https://rehomeit-ecommerce-website.onrender.com/products/category/${categoryName}`
       );
       setProducts(res.data);
       setLoading(false);
@@ -54,7 +54,7 @@ const DisplayProducts = ({ products: propsProducts }) => {
             onClick={() => navigate(`/product/${product._id}`)}
           >
             <img
-              src={product.image ? `http://localhost:5000/${product.image}` : "/placeholder.png"}
+              src={product.image ? `https://rehomeit-ecommerce-website.onrender.com/${product.image}` : "/placeholder.png"}
               alt={product.name}
               className="w-full h-50 object-contain rounded"
             />
